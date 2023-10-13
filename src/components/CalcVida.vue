@@ -2,7 +2,7 @@
     <div>
         <h1>Calculadora de la Vida</h1>
         <label for="edad">Edad:</label>
-        <input type="number" v-model="edad" @input="calcularDinero">
+        <input type="number" v-model="edad" @input="calcularDinero" maxlength="2">
         <div id="fam">
             <label for="familia">Familia:</label>
             <input type="number" v-model="familia" @input="calcularDinero">
@@ -35,7 +35,7 @@
             <label for="deudas">Deudas:</label>
             <input type="number" v-model="deudas" @input="calcularDinero">
         </div>
-        <p>Dinero acumulado: {{ dinero }}</p>
+        <p>El dinero que tendría a la edad de {{ edad }} es: {{ dinero }}</p>
     </div>
 </template>
 
@@ -58,6 +58,9 @@ export default {
     },
     methods: {
         calcularDinero() {
+            if (this.edad > 99) {
+                this.edad = 99; // Establece la edad máxima a 99
+            }
             this.dinero = (this.familia + this.herencia + this.gobierno + this.salario + this.emprendimiento - this.pareja - this.hijos - this.deudas);
         }
     }

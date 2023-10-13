@@ -32,8 +32,4 @@ body {
   height: 100%;
   width: 100%;
 }
-#fam, #her, #gov, #sal, #empre, #par, #hij, #deud {
-  margin-top: 0.5%;
-  margin-bottom: 0.5%;
-}
 </style>
