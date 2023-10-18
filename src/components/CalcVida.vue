@@ -64,7 +64,7 @@
 
 <script>
 export default {
-  name: 'CalculadoraVida',
+  name: 'CalcVida',
   data() {
     return {
       edad: 0,
